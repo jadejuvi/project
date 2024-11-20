@@ -13,19 +13,19 @@ export default function TreatmentsPage() {
     <div className="container mx-auto p-6 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Treatment Plans</h1>
+          <h1 className="text-3xl font-bold tracking-tight">Planes de Tratamiento</h1>
           <p className="text-muted-foreground">
-            Manage and track patient treatment plans
+            Administra y rastrea los planes de tratamiento de los pacientes
           </p>
         </div>
-        <Button onClick={() => setOpen(true)}>New Treatment Plan</Button>
+        <Button onClick={() => setOpen(true)}>Nuevo Plan de Tratamiento</Button>
       </div>
 
       <Tabs defaultValue="active" className="space-y-4">
         <TabsList>
-          <TabsTrigger value="active">Active Plans</TabsTrigger>
-          <TabsTrigger value="completed">Completed</TabsTrigger>
-          <TabsTrigger value="templates">Templates</TabsTrigger>
+          <TabsTrigger value="active">Planes Activos</TabsTrigger>
+          <TabsTrigger value="completed">Completados</TabsTrigger>
+          <TabsTrigger value="templates">Plantillas</TabsTrigger>
         </TabsList>
         <TabsContent value="active" className="space-y-4">
           <TreatmentPlanList status="active" />

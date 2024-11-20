@@ -12,33 +12,33 @@ import {
 
 const features = [
   {
-    title: "Patient Management",
-    description: "Efficiently manage patient records, history, and appointments in one place.",
+    title: "Gestión de Pacientes",
+    description: "Gestiona eficientemente los registros, la historia y las citas de los pacientes en un solo lugar.",
     icon: Users,
   },
   {
-    title: "Appointment Scheduling",
-    description: "Smart scheduling system with automated reminders and confirmations.",
+    title: "Programación de Citas",
+    description: "Sistema de programación inteligente con recordatorios y confirmaciones automatizadas.",
     icon: Calendar,
   },
   {
-    title: "Treatment Plans",
-    description: "Create and track detailed treatment plans with progress monitoring.",
+    title: "Planes de Tratamiento",
+    description: "Crea y realiza un seguimiento de planes de tratamiento detallados con monitoreo de progreso.",
     icon: FileText,
   },
   {
-    title: "Billing System",
-    description: "Streamlined billing and insurance processing with detailed reporting.",
+    title: "Sistema de Facturación",
+    description: "Facturación y procesamiento de seguros simplificados con informes detallados.",
     icon: DollarSign,
   },
   {
-    title: "Reports & Analytics",
-    description: "Comprehensive insights into your practice's performance and growth.",
+    title: "Informes y Análisis",
+    description: "Información completa sobre el rendimiento y crecimiento de tu clínica.",
     icon: PieChart,
   },
   {
-    title: "Secure & Compliant",
-    description: "HIPAA-compliant platform with advanced security measures.",
+    title: "Seguro y Cumplimiento",
+    description: "Plataforma compatible con HIPAA con medidas de seguridad avanzadas.",
     icon: Shield,
   },
 ];
@@ -47,7 +47,7 @@ export function Features() {
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">Features</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">Características</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature) => {
             const Icon = feature.icon;

@@ -22,12 +22,12 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 const formSchema = z.object({
-  firstName: z.string().min(2, 'First name is required'),
-  lastName: z.string().min(2, 'Last name is required'),
-  email: z.string().email('Invalid email address'),
-  phone: z.string().min(10, 'Phone number is required'),
+  firstName: z.string().min(2, 'Se requiere el nombre'),
+  lastName: z.string().min(2, 'Se requiere el apellido'),
+  email: z.string().email('Dirección de correo electrónico no válida'),
+  phone: z.string().min(10, 'Se requiere el número de teléfono'),
   dateOfBirth: z.string(),
-  address: z.string().min(5, 'Address is required'),
+  address: z.string().min(5, 'Se requiere la dirección'),
 });
 
 export function AddPatientDialog({
@@ -59,7 +59,7 @@ export function AddPatientDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Add New Patient</DialogTitle>
+          <DialogTitle>Agregar Nuevo Paciente</DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -69,7 +69,7 @@ export function AddPatientDialog({
                 name="firstName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>First Name</FormLabel>
+                    <FormLabel>Nombre</FormLabel>
                     <FormControl>
                       <Input {...field} />
                     </FormControl>
@@ -82,7 +82,7 @@ export function AddPatientDialog({
                 name="lastName"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Last Name</FormLabel>
+                    <FormLabel>Apellido</FormLabel>
                     <FormControl>
                       <Input {...field} />
                     </FormControl>
@@ -96,7 +96,7 @@ export function AddPatientDialog({
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>Correo Electrónico</FormLabel>
                   <FormControl>
                     <Input type="email" {...field} />
                   </FormControl>
@@ -109,7 +109,7 @@ export function AddPatientDialog({
               name="phone"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Phone</FormLabel>
+                  <FormLabel>Teléfono</FormLabel>
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
@@ -122,7 +122,7 @@ export function AddPatientDialog({
               name="dateOfBirth"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Date of Birth</FormLabel>
+                  <FormLabel>Fecha de Nacimiento</FormLabel>
                   <FormControl>
                     <Input type="date" {...field} />
                   </FormControl>
@@ -135,7 +135,7 @@ export function AddPatientDialog({
               name="address"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Address</FormLabel>
+                  <FormLabel>Dirección</FormLabel>
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
@@ -145,9 +145,9 @@ export function AddPatientDialog({
             />
             <div className="flex justify-end space-x-2">
               <Button variant="outline" onClick={() => onOpenChange(false)}>
-                Cancel
+                Cancelar
               </Button>
-              <Button type="submit">Add Patient</Button>
+              <Button type="submit">Agregar Paciente</Button>
             </div>
           </form>
         </Form>

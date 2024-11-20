@@ -11,7 +11,7 @@ const appointments = [
       image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330',
     },
     time: '09:00 AM',
-    type: 'Dental Cleaning',
+    type: 'Limpieza',
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const appointments = [
       image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d',
     },
     time: '10:30 AM',
-    type: 'Root Canal',
+    type: 'Extracción',
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const appointments = [
       image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80',
     },
     time: '02:00 PM',
-    type: 'Check-up',
+    type: 'Evaluación',
   },
 ];
 
@@ -37,7 +37,7 @@ export function UpcomingAppointments() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Today's Appointments</CardTitle>
+        <CardTitle>Turnos para Hoy</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">

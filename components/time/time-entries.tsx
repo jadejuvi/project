@@ -11,6 +11,7 @@ import {
 import { Avatar } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { format } from 'date-fns';
+import Image from 'next/image';
 
 const timeEntries = [
   {
@@ -56,12 +57,12 @@ export function TimeEntries({
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Staff</TableHead>
-            <TableHead>Date</TableHead>
-            <TableHead>Start Time</TableHead>
-            <TableHead>End Time</TableHead>
-            <TableHead>Total Hours</TableHead>
-            <TableHead>Status</TableHead>
+            <TableHead>Profesional</TableHead>
+            <TableHead>Fecha</TableHead>
+            <TableHead>Entrada</TableHead>
+            <TableHead>Salida</TableHead>
+            <TableHead>Total de Horas</TableHead>
+            <TableHead>Estado</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -70,10 +71,12 @@ export function TimeEntries({
               <TableCell>
                 <div className="flex items-center gap-3">
                   <Avatar>
-                    <img
+                    <Image
                       alt={entry.staff.name}
                       src={entry.staff.image}
                       className="aspect-square h-full w-full"
+                      width={100}
+                      height={100}
                     />
                   </Avatar>
                   <div>
@@ -87,13 +90,13 @@ export function TimeEntries({
               <TableCell>{format(entry.date, 'MMM d, yyyy')}</TableCell>
               <TableCell>{entry.startTime}</TableCell>
               <TableCell>{entry.endTime}</TableCell>
-              <TableCell>{entry.totalHours} hours</TableCell>
+              <TableCell>{entry.totalHours} horas</TableCell>
               <TableCell>
                 <Badge
                   variant="outline"
                   className={statusStyles[entry.status as keyof typeof statusStyles]}
                 >
-                  {entry.status}
+                  {entry.status === 'completed' ? 'completado' : 'pendiente'}
                 </Badge>
               </TableCell>
             </TableRow>

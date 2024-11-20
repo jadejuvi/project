@@ -17,6 +17,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import Image from 'next/image';
 
 const patients = [
   {
@@ -37,10 +38,10 @@ export function PatientList() {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Patient</TableHead>
-            <TableHead>Contact</TableHead>
-            <TableHead>Last Visit</TableHead>
-            <TableHead>Next Appointment</TableHead>
+            <TableHead>Paciente</TableHead>
+            <TableHead>Contacto</TableHead>
+            <TableHead>Última Visita</TableHead>
+            <TableHead>Próximo Turno</TableHead>
             <TableHead className="w-[50px]"></TableHead>
           </TableRow>
         </TableHeader>
@@ -50,10 +51,11 @@ export function PatientList() {
               <TableCell>
                 <div className="flex items-center gap-3">
                   <Avatar>
-                    <img
+                    <Image
                       alt={patient.name}
                       src={patient.image}
-                      className="aspect-square h-full w-full"
+                      layout="fill"
+                      objectFit="cover"
                     />
                   </Avatar>
                   <div>
@@ -86,9 +88,9 @@ export function PatientList() {
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="end">
-                    <DropdownMenuItem>View Details</DropdownMenuItem>
-                    <DropdownMenuItem>Edit Patient</DropdownMenuItem>
-                    <DropdownMenuItem>Schedule Appointment</DropdownMenuItem>
+                    <DropdownMenuItem>Ver Detalles</DropdownMenuItem>
+                    <DropdownMenuItem>Editar Paciente</DropdownMenuItem>
+                    <DropdownMenuItem>Programar Turno</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </TableCell>

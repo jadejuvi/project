@@ -26,30 +26,30 @@ import { NewStaffDialog } from '@/components/settings/new-staff-dialog';
 const staff = [
   {
     id: 1,
-    name: 'Dr. Sarah Wilson',
-    role: 'Dentist',
+    name: 'Dra. Sarah Wilson',
+    role: 'Dentista',
     email: 'sarah.wilson@dentflow.com',
-    status: 'active',
+    status: 'activo',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330',
     permissions: 'admin',
   },
   {
     id: 2,
     name: 'Dr. Michael Chen',
-    role: 'Orthodontist',
+    role: 'Ortodontista',
     email: 'michael.chen@dentflow.com',
-    status: 'active',
+    status: 'activo',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d',
-    permissions: 'staff',
+    permissions: 'personal',
   },
   {
     id: 3,
     name: 'Emily Davis',
-    role: 'Dental Hygienist',
+    role: 'Higienista Dental',
     email: 'emily.davis@dentflow.com',
-    status: 'inactive',
+    status: 'inactivo',
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80',
-    permissions: 'limited',
+    permissions: 'limitado',
   },
 ];
 
@@ -69,19 +69,15 @@ export function StaffSettings() {
           <div className="relative flex-1">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search staff..."
+              placeholder="Buscar personal..."
               className="pl-8 w-[300px]"
             />
           </div>
         </div>
         <div className="flex space-x-2">
-          <Button onClick={() => setOpenNewStaff(true)}>
-            <Plus className="mr-2 h-4 w-4" />
-            Add Staff Info
-          </Button>
           <Button onClick={() => setOpenRegister(true)} variant="default">
             <UserPlus className="mr-2 h-4 w-4" />
-            Register Staff
+            Registrar Profesional
           </Button>
         </div>
       </div>
@@ -90,11 +86,11 @@ export function StaffSettings() {
         <Table>
           <TableHeader>
             <TableRow>
-              <TableHead>Name</TableHead>
-              <TableHead>Role</TableHead>
-              <TableHead>Email</TableHead>
-              <TableHead>Status</TableHead>
-              <TableHead>Permissions</TableHead>
+              <TableHead>Nombre</TableHead>
+              <TableHead>Rol</TableHead>
+              <TableHead>Correo Electrónico</TableHead>
+              <TableHead>Estado</TableHead>
+              <TableHead>Permisos</TableHead>
               <TableHead className="w-[50px]"></TableHead>
             </TableRow>
           </TableHeader>
@@ -136,11 +132,11 @@ export function StaffSettings() {
                       </Button>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end">
-                      <DropdownMenuItem>Edit Details</DropdownMenuItem>
-                      <DropdownMenuItem>Reset Password</DropdownMenuItem>
-                      <DropdownMenuItem>Manage Permissions</DropdownMenuItem>
+                      <DropdownMenuItem>Editar Información</DropdownMenuItem>
+                      <DropdownMenuItem>Restablecer Contraseña</DropdownMenuItem>
+                      <DropdownMenuItem>Gestionar Permisos</DropdownMenuItem>
                       <DropdownMenuItem className="text-red-600">
-                        Deactivate Account
+                        Desactivar
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>

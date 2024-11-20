@@ -13,38 +13,31 @@ import { cn } from '@/lib/utils';
 
 const stats = [
   {
-    name: 'Total Patients',
-    value: '2,345',
+    name: 'Total de Pacientes',
+    value: '5.345',
     change: '+12.3%',
     trend: 'up',
     icon: Users,
   },
   {
-    name: 'Appointments Today',
-    value: '12',
+    name: 'Turnos de Hoy',
+    value: '19',
     change: '+4.5%',
     trend: 'up',
     icon: Calendar,
   },
   {
-    name: 'Revenue This Month',
-    value: '$45,678',
+    name: 'Ganancias del Mes',
+    value: '43.678.000',
     change: '-2.3%',
-    trend: 'down',
+    trend: 'up',
     icon: DollarSign,
-  },
-  {
-    name: 'Average Wait Time',
-    value: '14min',
-    change: '-5.2%',
-    trend: 'down',
-    icon: Clock,
   },
 ];
 
 export function DashboardStats() {
   return (
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       {stats.map((stat) => {
         const Icon = stat.icon;
         const TrendIcon = stat.trend === 'up' ? ArrowUpRight : ArrowDownRight;

@@ -67,7 +67,7 @@ export function PaymentForm({ invoiceId, totalAmount, onSuccess }: PaymentFormPr
           name="amount"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Amount</FormLabel>
+              <FormLabel>Cantidad</FormLabel>
               <FormControl>
                 <Input
                   type="number"
@@ -86,19 +86,19 @@ export function PaymentForm({ invoiceId, totalAmount, onSuccess }: PaymentFormPr
           name="method"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Payment Method</FormLabel>
+              <FormLabel>Método de Pago</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select payment method" />
+                    <SelectValue placeholder="Seleccionar método de pago" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="credit_card">Credit Card</SelectItem>
-                  <SelectItem value="debit_card">Debit Card</SelectItem>
-                  <SelectItem value="insurance">Insurance</SelectItem>
-                  <SelectItem value="cash">Cash</SelectItem>
-                  <SelectItem value="bank_transfer">Bank Transfer</SelectItem>
+                  <SelectItem value="credit_card">Tarjeta de Crédito</SelectItem>
+                  <SelectItem value="debit_card">Tarjeta de Débito</SelectItem>
+                  <SelectItem value="insurance">Seguro</SelectItem>
+                  <SelectItem value="cash">Efectivo</SelectItem>
+                  <SelectItem value="bank_transfer">Transferencia Bancaria</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -111,9 +111,9 @@ export function PaymentForm({ invoiceId, totalAmount, onSuccess }: PaymentFormPr
           name="reference"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Reference (Optional)</FormLabel>
+              <FormLabel>Referencia (Opcional)</FormLabel>
               <FormControl>
-                <Input {...field} placeholder="Transaction reference or notes" />
+                <Input {...field} placeholder="Referencia de transacción o notas" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -121,7 +121,7 @@ export function PaymentForm({ invoiceId, totalAmount, onSuccess }: PaymentFormPr
         />
 
         <Button type="submit" className="w-full" disabled={loading}>
-          {loading ? 'Processing...' : 'Process Payment'}
+          {loading ? 'Procesando...' : 'Procesar Pago'}
         </Button>
       </form>
     </Form>

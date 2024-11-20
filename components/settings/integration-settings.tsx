@@ -6,31 +6,25 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 
 const integrations = [
-  {
-    id: 'insurance',
-    title: 'Insurance Verification',
-    description: 'Automatically verify patient insurance coverage',
-    connected: true,
-    provider: 'DentalVerify',
-  },
+
   {
     id: 'payments',
-    title: 'Payment Processing',
-    description: 'Process credit card and online payments',
+    title: 'Procesamiento de Pagos',
+    description: 'Procesa pagos con tarjeta de crédito y en línea',
     connected: true,
-    provider: 'Stripe',
+    provider: 'Bancard',
   },
   {
     id: 'labs',
-    title: 'Dental Labs',
-    description: 'Connect with dental laboratories',
+    title: 'Laboratorios Dentales',
+    description: 'Conectate con laboratorios dentales',
     connected: false,
     provider: 'LabConnect',
   },
   {
     id: 'imaging',
-    title: 'Imaging Systems',
-    description: 'Integrate with X-ray and imaging devices',
+    title: 'Sistemas de Imágenes',
+    description: 'Integra con dispositivos de rayos X e imágenes',
     connected: true,
     provider: 'DentalImage',
   },
@@ -56,17 +50,17 @@ export function IntegrationSettings() {
           <CardContent>
             <div className="flex items-center justify-between text-sm">
               <div className="text-muted-foreground">
-                Provider: {integration.provider}
+                Proveedor: {integration.provider}
               </div>
               <Button variant="outline" size="sm">
-                Configure
+                Configurar
               </Button>
             </div>
           </CardContent>
         </Card>
       ))}
       <div className="flex justify-end">
-        <Button>Save Changes</Button>
+        <Button>Guardar Cambios</Button>
       </div>
     </div>
   );

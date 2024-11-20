@@ -20,9 +20,9 @@ export default function TimePage() {
     <div className="container mx-auto p-6 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Time Tracking</h1>
+          <h1 className="text-3xl font-bold tracking-tight">Seguimiento de Tiempo</h1>
           <p className="text-muted-foreground">
-            Manage staff schedules and time entries
+            Gestionar horarios de profesionales y entradas de tiempo
           </p>
         </div>
         <div className="flex items-center gap-4">
@@ -32,15 +32,15 @@ export default function TimePage() {
           />
           <Button onClick={() => setOpen(true)}>
             <Clock className="mr-2 h-4 w-4" />
-            Log Time
+            Marcador
           </Button>
         </div>
       </div>
 
       <Tabs defaultValue="schedule" className="space-y-6">
         <TabsList>
-          <TabsTrigger value="schedule">Schedule</TabsTrigger>
-          <TabsTrigger value="entries">Time Entries</TabsTrigger>
+          <TabsTrigger value="schedule">Disponibilidad</TabsTrigger>
+          <TabsTrigger value="entries">Marcador</TabsTrigger>
         </TabsList>
 
         <TabsContent value="schedule" className="space-y-6">

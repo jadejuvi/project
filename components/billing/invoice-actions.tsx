@@ -33,16 +33,16 @@ export function InvoiceActions({
         {status !== 'paid' && (
           <DropdownMenuItem onClick={onPay}>
             <CreditCard className="mr-2 h-4 w-4" />
-            Process Payment
+            Procesar Pago
           </DropdownMenuItem>
         )}
         <DropdownMenuItem onClick={onDownload}>
           <Download className="mr-2 h-4 w-4" />
-          Download PDF
+          Descargar PDF
         </DropdownMenuItem>
         <DropdownMenuItem onClick={onSend}>
           <Send className="mr-2 h-4 w-4" />
-          Send to Patient
+          Enviar al Paciente
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

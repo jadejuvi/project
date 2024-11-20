@@ -11,14 +11,14 @@ export function DashboardHeader() {
   return (
     <div className="flex items-center justify-between">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Dashboard</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Tablero</h1>
         <p className="text-muted-foreground">
-          Welcome back! Here's what's happening today.
+          ¡Bienvenido de nuevo! Esto es lo que está sucediendo hoy.
         </p>
       </div>
       <Button onClick={() => setOpen(true)}>
         <Plus className="mr-2 h-4 w-4" />
-        New Appointment
+        Nueva Cita
       </Button>
 
       <NewAppointmentDialog open={open} onOpenChange={setOpen} />

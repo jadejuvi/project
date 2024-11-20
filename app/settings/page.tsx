@@ -12,19 +12,19 @@ export default function SettingsPage() {
   return (
     <div className="container mx-auto p-6 space-y-6">
       <div>
-        <h1 className="text-3xl font-bold tracking-tight">Settings</h1>
+        <h1 className="text-3xl font-bold tracking-tight">Configuración</h1>
         <p className="text-muted-foreground">
-          Manage your practice preferences and configurations
+          Administra tus preferencias y las configuraciones de tu clínica
         </p>
       </div>
 
       <Tabs defaultValue="practice" className="space-y-6">
         <TabsList>
-          <TabsTrigger value="practice">Practice</TabsTrigger>
-          <TabsTrigger value="staff">Staff</TabsTrigger>
-          <TabsTrigger value="notifications">Notifications</TabsTrigger>
-          <TabsTrigger value="integrations">Integrations</TabsTrigger>
-          <TabsTrigger value="billing">Billing</TabsTrigger>
+          <TabsTrigger value="practice">Clínica</TabsTrigger>
+          <TabsTrigger value="staff">Profesional</TabsTrigger>
+          <TabsTrigger value="notifications">Notificaciones</TabsTrigger>
+          <TabsTrigger value="integrations">Integraciones</TabsTrigger>
+          <TabsTrigger value="billing">Facturación</TabsTrigger>
         </TabsList>
 
         <TabsContent value="practice" className="space-y-6">

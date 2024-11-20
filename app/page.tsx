@@ -18,7 +18,7 @@ export default function LandingPage() {
           <div className="flex items-center gap-4">
             <ThemeToggle />
             <Link href="/login">
-              <Button>Login</Button>
+              <Button>Iniciar sesión</Button>
             </Link>
           </div>
         </div>
@@ -28,16 +28,16 @@ export default function LandingPage() {
       <section className="py-20 px-4">
         <div className="container mx-auto text-center">
           <h1 className="text-5xl font-bold tracking-tight mb-6">
-            Modern Dental Practice Management
+            Gestión Completa de Clínicas Dentales
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Streamline your dental practice with our comprehensive management solution. Everything you need in one place.
+            Optimiza tu práctica dental con nuestra solución integral de gestión. Todo lo que necesitas en un solo lugar.
           </p>
           <div className="flex gap-4 justify-center">
             <Link href="/login">
-              <Button size="lg">Get Started</Button>
+              <Button size="lg">Comenzar</Button>
             </Link>
-            <Button size="lg" variant="outline">Learn More</Button>
+            <Button size="lg" variant="outline">Aprender más</Button>
           </div>
         </div>
       </section>
@@ -51,7 +51,7 @@ export default function LandingPage() {
       {/* Contact */}
       <section className="py-20 px-4 bg-muted/50">
         <div className="container mx-auto max-w-2xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Contact Us</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Contacto</h2>
           <ContactForm />
         </div>
       </section>

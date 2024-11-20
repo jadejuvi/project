@@ -20,14 +20,14 @@ import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 
 const navigation = [
-  { name: 'Dashboard', href: '/dashboard', icon: Home },
-  { name: 'Appointments', href: '/appointments', icon: Calendar },
-  { name: 'Patients', href: '/patients', icon: Users },
-  { name: 'Treatment Plans', href: '/treatments', icon: FileText },
-  { name: 'Reports', href: '/reports', icon: PieChart },
-  { name: 'Time Tracking', href: '/time', icon: Clock },
-  { name: 'Billing', href: '/billing', icon: DollarSign },
-  { name: 'Settings', href: '/settings', icon: Settings },
+  { name: 'Panel de Control', href: '/dashboard', icon: Home },
+  { name: 'Turnos', href: '/appointments', icon: Calendar },
+  { name: 'Pacientes', href: '/patients', icon: Users },
+  { name: 'Planes de Tratamiento', href: '/treatments', icon: FileText },
+  { name: 'Informes', href: '/reports', icon: PieChart },
+  { name: 'Horarios', href: '/time', icon: Clock },
+  { name: 'Facturación', href: '/billing', icon: DollarSign },
+  { name: 'Configuración', href: '/settings', icon: Settings },
 ];
 
 export function Sidebar() {
@@ -69,7 +69,7 @@ export function Sidebar() {
 
   return (
     <>
-      {/* Mobile Menu Button */}
+      {/* Botón de Menú Móvil */}
       <div className="lg:hidden fixed top-4 left-4 z-50">
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
@@ -83,7 +83,7 @@ export function Sidebar() {
         </Sheet>
       </div>
 
-      {/* Desktop Sidebar */}
+      {/* Barra Lateral de Escritorio */}
       <div className="hidden lg:flex lg:flex-col w-64 bg-card border-r">
         {SidebarContent}
       </div>

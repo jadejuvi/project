@@ -9,21 +9,21 @@ import { cn } from '@/lib/utils';
 
 const stats = [
   {
-    name: 'Total Patients',
+    name: 'Total de Pacientes',
     value: '2,345',
     change: '+12.3%',
     trend: 'up',
     icon: Users,
   },
   {
-    name: 'Appointments Today',
+    name: 'Citas Hoy',
     value: '12',
     change: '+4.5%',
     trend: 'up',
     icon: Calendar,
   },
   {
-    name: 'Revenue This Month',
+    name: 'Ingresos Este Mes',
     value: '$45,678',
     change: '-2.3%',
     trend: 'down',

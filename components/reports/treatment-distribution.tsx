@@ -10,10 +10,10 @@ import {
 import { Progress } from '@/components/ui/progress';
 
 const treatments = [
-  { name: 'Dental Cleaning', count: 145, percentage: 35 },
-  { name: 'Root Canal', count: 89, percentage: 22 },
-  { name: 'Fillings', count: 120, percentage: 29 },
-  { name: 'Extractions', count: 56, percentage: 14 },
+  { name: 'Limpieza Dental', count: 145, percentage: 35 },
+  { name: 'Conducto Radicular', count: 89, percentage: 22 },
+  { name: 'Empastes', count: 120, percentage: 29 },
+  { name: 'Extracciones', count: 56, percentage: 14 },
 ];
 
 export function TreatmentDistribution() {
@@ -22,8 +22,8 @@ export function TreatmentDistribution() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Treatment Distribution</CardTitle>
-        <CardDescription>Most common procedures</CardDescription>
+        <CardTitle>Distribución de Tratamientos</CardTitle>
+        <CardDescription>Procedimientos más comunes</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-6">
@@ -40,7 +40,7 @@ export function TreatmentDistribution() {
           ))}
           <div className="pt-4 border-t">
             <div className="flex items-center justify-between text-sm">
-              <div>Total Treatments</div>
+              <div>Total de Tratamientos</div>
               <div className="font-medium">{totalTreatments}</div>
             </div>
           </div>

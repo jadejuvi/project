@@ -72,7 +72,7 @@ export function NewAppointmentDialog({
           <Alert className="bg-green-50 border-green-200">
             <CheckCircle2 className="h-4 w-4 text-green-600" />
             <AlertDescription className="text-green-700">
-              Appointment successfully scheduled. A confirmation email will be sent to the patient.
+              Cita programada con éxito. Se enviará un correo electrónico de confirmación al paciente.
             </AlertDescription>
           </Alert>
         </div>
@@ -81,7 +81,7 @@ export function NewAppointmentDialog({
       <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Schedule New Appointment</DialogTitle>
+            <DialogTitle>Agregar Turno</DialogTitle>
           </DialogHeader>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -90,14 +90,14 @@ export function NewAppointmentDialog({
                 name="patientId"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Patient</FormLabel>
+                    <FormLabel>Paciente</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
                     >
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select patient" />
+                          <SelectValue placeholder="Seleccionar paciente" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
@@ -115,7 +115,7 @@ export function NewAppointmentDialog({
                 name="date"
                 render={({ field }) => (
                   <FormItem className="flex flex-col">
-                    <FormLabel>Date</FormLabel>
+                    <FormLabel>Fecha</FormLabel>
                     <Popover>
                       <PopoverTrigger asChild>
                         <FormControl>
@@ -129,7 +129,7 @@ export function NewAppointmentDialog({
                             {field.value ? (
                               format(field.value, 'PPP')
                             ) : (
-                              <span>Pick a date</span>
+                              <span>Seleccionar fecha</span>
                             )}
                             <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                           </Button>
@@ -157,14 +157,14 @@ export function NewAppointmentDialog({
                 name="time"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Time</FormLabel>
+                    <FormLabel>Hora</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
                     >
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select time" />
+                          <SelectValue placeholder="Seleccionar hora" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
@@ -192,24 +192,24 @@ export function NewAppointmentDialog({
                 name="type"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Type</FormLabel>
+                    <FormLabel>Tratamiento</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
                     >
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select type" />
+                          <SelectValue placeholder="Seleccionar tratamiento" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="checkup">Check-up</SelectItem>
-                        <SelectItem value="cleaning">Cleaning</SelectItem>
-                        <SelectItem value="filling">Filling</SelectItem>
-                        <SelectItem value="root-canal">Root Canal</SelectItem>
-                        <SelectItem value="crown">Crown</SelectItem>
-                        <SelectItem value="extraction">Extraction</SelectItem>
-                        <SelectItem value="emergency">Emergency</SelectItem>
+                        <SelectItem value="checkup">Chequeo</SelectItem>
+                        <SelectItem value="cleaning">Limpieza</SelectItem>
+                        <SelectItem value="filling">Relleno</SelectItem>
+                        <SelectItem value="root-canal">Conducto Radicular</SelectItem>
+                        <SelectItem value="crown">Corona</SelectItem>
+                        <SelectItem value="extraction">Extracción</SelectItem>
+                        <SelectItem value="emergency">Emergencia</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -222,21 +222,21 @@ export function NewAppointmentDialog({
                 name="duration"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Duration</FormLabel>
+                    <FormLabel>Duración</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
                     >
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select duration" />
+                          <SelectValue placeholder="Seleccionar duración" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="30">30 minutes</SelectItem>
-                        <SelectItem value="60">1 hour</SelectItem>
-                        <SelectItem value="90">1.5 hours</SelectItem>
-                        <SelectItem value="120">2 hours</SelectItem>
+                        <SelectItem value="30">30 minutos</SelectItem>
+                        <SelectItem value="60">1 hora</SelectItem>
+                        <SelectItem value="90">1.5 horas</SelectItem>
+                        <SelectItem value="120">2 horas</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -246,9 +246,9 @@ export function NewAppointmentDialog({
 
               <div className="flex justify-end space-x-2">
                 <Button variant="outline" onClick={() => onOpenChange(false)}>
-                  Cancel
+                  Cancelar
                 </Button>
-                <Button type="submit">Schedule</Button>
+                <Button type="submit">Programar</Button>
               </div>
             </form>
           </Form>

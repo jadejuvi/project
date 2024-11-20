@@ -17,11 +17,11 @@ export default function LoginPage() {
     e.preventDefault();
     setLoading(true);
 
-    // Simulate login - in a real app, this would validate against a backend
+    // Simular inicio de sesión - en una aplicación real, esto se validaría contra un backend
     setTimeout(() => {
       toast({
-        title: "Success",
-        description: "Welcome back! Redirecting to dashboard...",
+        title: "Éxito",
+        description: "¡Bienvenido de nuevo! Redirigiendo al panel de control...",
       });
       router.push('/dashboard');
       setLoading(false);
@@ -34,31 +34,31 @@ export default function LoginPage() {
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center">DentFlow</CardTitle>
           <p className="text-sm text-center text-muted-foreground">
-            Enter your credentials to access your account
+            Ingresa tus credenciales para acceder a tu cuenta
           </p>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">Correo Electrónico</Label>
               <Input
                 id="email"
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Ingresa tu correo electrónico"
                 required
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password">Contraseña</Label>
               <Input
                 id="password"
                 type="password"
-                placeholder="Enter your password"
+                placeholder="Ingresa tu contraseña"
                 required
               />
             </div>
             <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? 'Signing in...' : 'Sign In'}
+              {loading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
             </Button>
 
             <div className="text-center text-sm">
@@ -66,7 +66,7 @@ export default function LoginPage() {
                 href="/"
                 className="text-primary hover:underline"
               >
-                Back to Home
+                Volver a Inicio
               </Link>
             </div>
           </form>

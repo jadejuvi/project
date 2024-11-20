@@ -1,61 +1,63 @@
 import { Avatar } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Image from 'next/image';
 
-const patients = [
+const pacientes = [
   {
     id: 1,
-    name: 'Robert Wilson',
-    lastVisit: '2 days ago',
-    nextAppointment: 'Mar 15, 2024',
-    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e',
+    nombre: 'Robert Wilson',
+    ultimaVisita: 'hace 2 días',
+    proximaCita: '15 de marzo de 2024',
+    imagen: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e',
   },
   {
     id: 2,
-    name: 'Lisa Anderson',
-    lastVisit: '1 week ago',
-    nextAppointment: 'Mar 20, 2024',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2',
+    nombre: 'Lisa Anderson',
+    ultimaVisita: 'hace 1 semana',
+    proximaCita: '20 de marzo de 2024',
+    imagen: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2',
   },
   {
     id: 3,
-    name: 'David Martinez',
-    lastVisit: '2 weeks ago',
-    nextAppointment: 'Apr 5, 2024',
-    image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d',
+    nombre: 'David Martinez',
+    ultimaVisita: 'hace 2 semanas',
+    proximaCita: '5 de abril de 2024',
+    imagen: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d',
   },
 ];
 
-export function RecentPatients() {
+export function PacientesRecientes() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Recent Patients</CardTitle>
+        <CardTitle>Pacientes Recientes</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
-          {patients.map((patient) => (
+          {pacientes.map((paciente) => (
             <div
-              key={patient.id}
+              key={paciente.id}
               className="flex items-center justify-between p-4 bg-muted/50 rounded-lg"
             >
               <div className="flex items-center gap-4">
                 <Avatar>
-                  <img
-                    alt={patient.name}
-                    src={patient.image}
+                  <Image
+                    alt={paciente.nombre}
+                    src={paciente.imagen}
+                    layout="fill"
                     className="aspect-square h-full w-full"
                   />
                 </Avatar>
                 <div>
-                  <h4 className="font-medium">{patient.name}</h4>
+                  <h4 className="font-medium">{paciente.nombre}</h4>
                   <p className="text-sm text-muted-foreground">
-                    Last visit: {patient.lastVisit}
+                    Última visita: {paciente.ultimaVisita}
                   </p>
                 </div>
               </div>
               <div className="text-sm">
-                <span className="text-muted-foreground">Next: </span>
-                {patient.nextAppointment}
+                <span className="text-muted-foreground">Próxima: </span>
+                {paciente.proximaCita}
               </div>
             </div>
           ))}

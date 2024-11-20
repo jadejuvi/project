@@ -36,7 +36,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 
 const formSchema = z.object({
   patientId: z.string(),
-  title: z.string().min(2, 'Title is required'),
+  title: z.string().min(2, 'Se requiere un título'),
   description: z.string(),
   startDate: z.date(),
   estimatedEndDate: z.date(),
@@ -76,7 +76,7 @@ export function NewTreatmentPlanDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[600px]">
         <DialogHeader>
-          <DialogTitle>Create New Treatment Plan</DialogTitle>
+          <DialogTitle>Crear Nuevo Plan de Tratamiento</DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -85,14 +85,14 @@ export function NewTreatmentPlanDialog({
               name="patientId"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Patient</FormLabel>
+                  <FormLabel>Paciente</FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select patient" />
+                        <SelectValue placeholder="Seleccionar paciente" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -109,7 +109,7 @@ export function NewTreatmentPlanDialog({
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Title</FormLabel>
+                  <FormLabel>Título</FormLabel>
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
@@ -122,7 +122,7 @@ export function NewTreatmentPlanDialog({
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Description</FormLabel>
+                  <FormLabel>Descripción</FormLabel>
                   <FormControl>
                     <Textarea {...field} />
                   </FormControl>
@@ -136,7 +136,7 @@ export function NewTreatmentPlanDialog({
                 name="startDate"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Start Date</FormLabel>
+                    <FormLabel>Fecha de Inicio</FormLabel>
                     <Popover>
                       <PopoverTrigger asChild>
                         <FormControl>
@@ -150,7 +150,7 @@ export function NewTreatmentPlanDialog({
                             {field.value ? (
                               format(field.value, 'PPP')
                             ) : (
-                              <span>Pick a date</span>
+                              <span>Seleccionar fecha</span>
                             )}
                             <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                           </Button>
@@ -174,7 +174,7 @@ export function NewTreatmentPlanDialog({
                 name="estimatedEndDate"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Estimated End Date</FormLabel>
+                    <FormLabel>Fecha Estimada de Finalización</FormLabel>
                     <Popover>
                       <PopoverTrigger asChild>
                         <FormControl>
@@ -188,7 +188,7 @@ export function NewTreatmentPlanDialog({
                             {field.value ? (
                               format(field.value, 'PPP')
                             ) : (
-                              <span>Pick a date</span>
+                              <span>Seleccionar fecha</span>
                             )}
                             <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                           </Button>
@@ -213,7 +213,7 @@ export function NewTreatmentPlanDialog({
               name="totalCost"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Total Cost</FormLabel>
+                  <FormLabel>Costo Total</FormLabel>
                   <FormControl>
                     <Input
                       type="number"
@@ -230,7 +230,7 @@ export function NewTreatmentPlanDialog({
               name="notes"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Notes</FormLabel>
+                  <FormLabel>Notas</FormLabel>
                   <FormControl>
                     <Textarea {...field} />
                   </FormControl>
@@ -240,9 +240,9 @@ export function NewTreatmentPlanDialog({
             />
             <div className="flex justify-end space-x-2">
               <Button variant="outline" onClick={() => onOpenChange(false)}>
-                Cancel
+                Cancelar
               </Button>
-              <Button type="submit">Create Plan</Button>
+              <Button type="submit">Crear Plan</Button>
             </div>
           </form>
         </Form>

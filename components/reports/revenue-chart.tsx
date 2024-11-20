@@ -10,9 +10,9 @@ import {
 import { Progress } from '@/components/ui/progress';
 
 const monthlyRevenue = [
-  { month: 'Jan', revenue: 45000, target: 50000 },
-  { month: 'Feb', revenue: 52000, target: 50000 },
-  { month: 'Mar', revenue: 48000, target: 50000 },
+  { month: 'Ene', revenue: 7000000, target: 10000000 },
+  { month: 'Feb', revenue: 12000000, target: 10000000 },
+  { month: 'Mar', revenue: 8750000, target: 10000000 },
 ];
 
 export function RevenueChart({ 
@@ -26,8 +26,8 @@ export function RevenueChart({
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Revenue Overview</CardTitle>
-        <CardDescription>Monthly revenue performance</CardDescription>
+        <CardTitle>Resumen de Ingresos</CardTitle>
+        <CardDescription>Rendimiento mensual de ingresos</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-8">
@@ -36,10 +36,10 @@ export function RevenueChart({
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
                   <p className="text-sm font-medium">{month.month}</p>
-                  <p className="text-2xl font-bold">${month.revenue.toLocaleString()}</p>
+                  <p className="text-2xl font-bold">Gs. {month.revenue.toLocaleString('es-PY')}</p>
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  Target: ${month.target.toLocaleString()}
+                  Objetivo: Gs. {month.target.toLocaleString('es-PY')}
                 </div>
               </div>
               <Progress
@@ -50,8 +50,8 @@ export function RevenueChart({
           ))}
           <div className="pt-4 border-t">
             <div className="flex items-center justify-between text-sm">
-              <div>Average Revenue</div>
-              <div className="font-medium">${averageRevenue.toLocaleString()}</div>
+              <div>Ingreso Promedio</div>
+              <div className="font-medium">Gs. {averageRevenue.toLocaleString('es-PY')}</div>
             </div>
           </div>
         </div>

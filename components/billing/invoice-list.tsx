@@ -19,6 +19,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { MoreHorizontal, Download, Send } from 'lucide-react';
 import { format } from 'date-fns';
+import Image from 'next/image';
 
 interface Invoice {
   id: string;
@@ -27,16 +28,16 @@ interface Invoice {
     image?: string;
   };
   amount: number;
-  status: 'paid' | 'pending' | 'overdue';
+  status: 'pagado' | 'pendiente' | 'vencido';
   date: Date;
   dueDate: Date;
   treatment: string;
 }
 
 const statusStyles = {
-  paid: 'bg-green-100 text-green-700',
-  pending: 'bg-yellow-100 text-yellow-700',
-  overdue: 'bg-red-100 text-red-700',
+  pagado: 'bg-green-100 text-green-700',
+  pendiente: 'bg-yellow-100 text-yellow-700',
+  vencido: 'bg-red-100 text-red-700',
 };
 
 export function InvoiceList({ searchQuery }: { searchQuery: string }) {
@@ -48,10 +49,10 @@ export function InvoiceList({ searchQuery }: { searchQuery: string }) {
         image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330',
       },
       amount: 850.00,
-      status: 'paid',
+      status: 'pagado',
       date: new Date('2024-03-01'),
       dueDate: new Date('2024-03-15'),
-      treatment: 'Root Canal + Crown',
+      treatment: 'Limpieza + Blanqueamiento',
     },
     {
       id: 'INV-002',
@@ -60,10 +61,10 @@ export function InvoiceList({ searchQuery }: { searchQuery: string }) {
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d',
       },
       amount: 1200.00,
-      status: 'pending',
+      status: 'pendiente',
       date: new Date('2024-03-05'),
       dueDate: new Date('2024-03-19'),
-      treatment: 'Dental Implant',
+      treatment: 'Implante',
     },
   ];
 
@@ -78,13 +79,13 @@ export function InvoiceList({ searchQuery }: { searchQuery: string }) {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Invoice</TableHead>
-            <TableHead>Patient</TableHead>
-            <TableHead>Treatment</TableHead>
-            <TableHead>Amount</TableHead>
-            <TableHead>Status</TableHead>
-            <TableHead>Date</TableHead>
-            <TableHead>Due Date</TableHead>
+            <TableHead>Factura</TableHead>
+            <TableHead>Paciente</TableHead>
+            <TableHead>Tratamiento</TableHead>
+            <TableHead>Monto</TableHead>
+            <TableHead>Estado</TableHead>
+            <TableHead>Fecha</TableHead>
+            <TableHead>Vencimiento</TableHead>
             <TableHead className="w-[50px]"></TableHead>
           </TableRow>
         </TableHeader>
@@ -96,10 +97,12 @@ export function InvoiceList({ searchQuery }: { searchQuery: string }) {
                 <div className="flex items-center gap-3">
                   <Avatar>
                     {invoice.patient.image && (
-                      <img
+                      <Image
                         alt={invoice.patient.name}
                         src={invoice.patient.image}
                         className="aspect-square h-full w-full"
+                        width={100}
+                        height={100}
                       />
                     )}
                   </Avatar>
@@ -116,8 +119,8 @@ export function InvoiceList({ searchQuery }: { searchQuery: string }) {
                   {invoice.status}
                 </Badge>
               </TableCell>
-              <TableCell>{format(invoice.date, 'MMM d, yyyy')}</TableCell>
-              <TableCell>{format(invoice.dueDate, 'MMM d, yyyy')}</TableCell>
+              <TableCell>{format(invoice.date, 'd MMM, yyyy')}</TableCell>
+              <TableCell>{format(invoice.dueDate, 'd MMM, yyyy')}</TableCell>
               <TableCell>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
@@ -128,13 +131,13 @@ export function InvoiceList({ searchQuery }: { searchQuery: string }) {
                   <DropdownMenuContent align="end">
                     <DropdownMenuItem>
                       <Download className="mr-2 h-4 w-4" />
-                      Download PDF
+                      Descargar PDF
                     </DropdownMenuItem>
                     <DropdownMenuItem>
                       <Send className="mr-2 h-4 w-4" />
-                      Send to Patient
+                      Enviar al Paciente
                     </DropdownMenuItem>
-                    <DropdownMenuItem>Mark as Paid</DropdownMenuItem>
+                    <DropdownMenuItem>Marcar como Pagado</DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
               </TableCell>

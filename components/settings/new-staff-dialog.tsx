@@ -29,8 +29,8 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 const formSchema = z.object({
-  name: z.string().min(2, 'Name is required'),
-  email: z.string().email('Invalid email address'),
+  name: z.string().min(2, 'Campo requerido'),
+  email: z.string().email('Email no válido'),
   role: z.string(),
   permissions: z.string(),
 });

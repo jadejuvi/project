@@ -17,13 +17,13 @@ interface Payment {
   amount: number;
   method: string;
   date: Date;
-  status: 'successful' | 'processing' | 'failed';
+  status: 'exitoso' | 'procesando' | 'fallido';
 }
 
 const statusStyles = {
-  successful: 'bg-green-100 text-green-700',
-  processing: 'bg-blue-100 text-blue-700',
-  failed: 'bg-red-100 text-red-700',
+  exitoso: 'bg-green-100 text-green-700',
+  procesando: 'bg-blue-100 text-blue-700',
+  fallido: 'bg-red-100 text-red-700',
 };
 
 export function PaymentHistory({ searchQuery }: { searchQuery: string }) {
@@ -32,17 +32,17 @@ export function PaymentHistory({ searchQuery }: { searchQuery: string }) {
       id: 'PAY-001',
       invoiceId: 'INV-001',
       amount: 850.00,
-      method: 'Credit Card',
+      method: 'Tarjeta de Crédito',
       date: new Date('2024-03-01'),
-      status: 'successful',
+      status: 'exitoso',
     },
     {
       id: 'PAY-002',
       invoiceId: 'INV-002',
       amount: 1200.00,
-      method: 'Insurance',
+      method: 'Seguro médico',
       date: new Date('2024-03-05'),
-      status: 'processing',
+      status: 'procesando',
     },
   ];
 
@@ -57,12 +57,12 @@ export function PaymentHistory({ searchQuery }: { searchQuery: string }) {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Payment ID</TableHead>
-            <TableHead>Invoice ID</TableHead>
-            <TableHead>Amount</TableHead>
-            <TableHead>Method</TableHead>
-            <TableHead>Date</TableHead>
-            <TableHead>Status</TableHead>
+            <TableHead>ID de Pago</TableHead>
+            <TableHead>ID de Factura</TableHead>
+            <TableHead>Monto</TableHead>
+            <TableHead>Método</TableHead>
+            <TableHead>Fecha</TableHead>
+            <TableHead>Estado</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

@@ -6,7 +6,7 @@ interface Invoice {
   patientId: string;
   treatmentId: string;
   amount: number;
-  status: 'paid' | 'pending' | 'overdue';
+  status: 'pagado' | 'pendiente' | 'vencido';
   dueDate: Date;
   notes?: string;
 }
@@ -16,7 +16,7 @@ interface Payment {
   invoiceId: string;
   amount: number;
   method: string;
-  status: 'successful' | 'processing' | 'failed';
+  status: 'exitoso' | 'procesando' | 'fallido';
   date: Date;
 }
 
@@ -32,19 +32,19 @@ export function useBilling() {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) throw new Error('Failed to create invoice');
+      if (!response.ok) throw new Error('Error al crear la factura');
 
       const invoice = await response.json();
       toast({
-        title: 'Success',
-        description: 'Invoice created successfully',
+        title: 'Éxito',
+        description: 'Factura creada con éxito',
       });
       return invoice;
     } catch (error) {
       toast({
         variant: 'destructive',
         title: 'Error',
-        description: 'Failed to create invoice',
+        description: 'Error al crear la factura',
       });
       throw error;
     } finally {
@@ -61,19 +61,19 @@ export function useBilling() {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) throw new Error('Failed to process payment');
+      if (!response.ok) throw new Error('Error al procesar el pago');
 
       const payment = await response.json();
       toast({
-        title: 'Success',
-        description: 'Payment processed successfully',
+        title: 'Éxito',
+        description: 'Pago procesado con éxito',
       });
       return payment;
     } catch (error) {
       toast({
         variant: 'destructive',
         title: 'Error',
-        description: 'Failed to process payment',
+        description: 'Error al procesar el pago',
       });
       throw error;
     } finally {

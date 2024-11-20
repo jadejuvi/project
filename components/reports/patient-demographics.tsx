@@ -18,9 +18,9 @@ const ageGroups = [
 ];
 
 const insuranceTypes = [
-  { type: 'Private', count: 523, percentage: 51 },
+  { type: 'Privado', count: 523, percentage: 51 },
   { type: 'Medicare', count: 312, percentage: 30 },
-  { type: 'Self-Pay', count: 196, percentage: 19 },
+  { type: 'Pago por cuenta propia', count: 196, percentage: 19 },
 ];
 
 export function PatientDemographics() {
@@ -28,15 +28,15 @@ export function PatientDemographics() {
     <>
       <Card>
         <CardHeader>
-          <CardTitle>Age Distribution</CardTitle>
-          <CardDescription>Patient age groups</CardDescription>
+          <CardTitle>Distribución de Edad</CardTitle>
+          <CardDescription>Grupos de edad de los pacientes</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">
             {ageGroups.map((group) => (
               <div key={group.range} className="space-y-2">
                 <div className="flex items-center justify-between text-sm">
-                  <div className="font-medium">{group.range} years</div>
+                  <div className="font-medium">{group.range} años</div>
                   <div className="text-muted-foreground">
                     {group.count} ({group.percentage}%)
                   </div>
@@ -50,8 +50,8 @@ export function PatientDemographics() {
 
       <Card>
         <CardHeader>
-          <CardTitle>Insurance Distribution</CardTitle>
-          <CardDescription>Patient insurance types</CardDescription>
+          <CardTitle>Distribución de Seguros</CardTitle>
+          <CardDescription>Tipos de seguros de los pacientes</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-4">

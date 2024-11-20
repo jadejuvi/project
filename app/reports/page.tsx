@@ -20,9 +20,9 @@ export default function ReportsPage() {
     <div className="container mx-auto p-6 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Reports & Analytics</h1>
+          <h1 className="text-3xl font-bold tracking-tight">Informes y Análisis</h1>
           <p className="text-muted-foreground">
-            View insights and performance metrics
+            Ver información y métricas de rendimiento
           </p>
         </div>
         <div className="flex items-center gap-4">
@@ -32,7 +32,7 @@ export default function ReportsPage() {
           />
           <Button variant="outline">
             <Download className="mr-2 h-4 w-4" />
-            Export Report
+            Exportar Informe
           </Button>
         </div>
       </div>
@@ -43,9 +43,9 @@ export default function ReportsPage() {
 
       <Tabs defaultValue="revenue" className="space-y-6">
         <TabsList>
-          <TabsTrigger value="revenue">Revenue</TabsTrigger>
-          <TabsTrigger value="treatments">Treatments</TabsTrigger>
-          <TabsTrigger value="demographics">Demographics</TabsTrigger>
+          <TabsTrigger value="revenue">Ingresos</TabsTrigger>
+          <TabsTrigger value="treatments">Tratamientos</TabsTrigger>
+          <TabsTrigger value="demographics">Demografía</TabsTrigger>
         </TabsList>
 
         <TabsContent value="revenue" className="space-y-6">

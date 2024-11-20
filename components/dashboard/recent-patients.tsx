@@ -7,21 +7,21 @@ const patients = [
   {
     id: 1,
     name: 'Robert Wilson',
-    lastVisit: '2 days ago',
+    lastVisit: 'Hace 2 días',
     nextAppointment: 'Mar 15, 2024',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e',
   },
   {
     id: 2,
     name: 'Lisa Anderson',
-    lastVisit: '1 week ago',
+    lastVisit: 'Hace 1 semana',
     nextAppointment: 'Mar 20, 2024',
     image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2',
   },
   {
     id: 3,
     name: 'David Martinez',
-    lastVisit: '2 weeks ago',
+    lastVisit: 'Hace 2 semanas',
     nextAppointment: 'Apr 5, 2024',
     image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d',
   },
@@ -31,7 +31,7 @@ export function RecentPatients() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Recent Patients</CardTitle>
+        <CardTitle>Pacientes Recientes</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
@@ -51,12 +51,12 @@ export function RecentPatients() {
                 <div>
                   <h4 className="font-medium">{patient.name}</h4>
                   <p className="text-sm text-muted-foreground">
-                    Last visit: {patient.lastVisit}
+                    Última consulta: {patient.lastVisit}
                   </p>
                 </div>
               </div>
               <div className="text-sm">
-                <span className="text-muted-foreground">Next: </span>
+                <span className="text-muted-foreground">Próxima: </span>
                 {patient.nextAppointment}
               </div>
             </div>

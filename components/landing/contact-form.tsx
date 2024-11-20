@@ -18,9 +18,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/components/ui/use-toast";
 
 const formSchema = z.object({
-  name: z.string().min(2, "Name is required"),
-  email: z.string().email("Invalid email address"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  name: z.string().min(2, "Completa todos los campos."),
+  email: z.string().email("Correo no válido."),
+  message: z.string().min(10, "Tu mensaje es muy corto."),
 });
 
 export function ContactForm() {
@@ -41,15 +41,15 @@ export function ContactForm() {
       // Here you would typically send the form data to your API
       console.log(values);
       toast({
-        title: "Success",
-        description: "Message sent successfully!",
+        title: "Éxito",
+        description: "Mensaje enviado!",
       });
       form.reset();
     } catch (error) {
       toast({
         variant: "destructive",
         title: "Error",
-        description: "Failed to send message",
+        description: "Algo salió mal al enviar tu mensaje.",
       });
     } finally {
       setLoading(false);
@@ -64,9 +64,9 @@ export function ContactForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Nombre</FormLabel>
               <FormControl>
-                <Input placeholder="Your name" {...field} />
+                <Input placeholder="Tu nombre" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -79,7 +79,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Email</FormLabel>
               <FormControl>
-                <Input type="email" placeholder="Your email" {...field} />
+                <Input type="email" placeholder="Tu email" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -90,10 +90,10 @@ export function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>Mensaje</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="How can we help you?"
+                  placeholder="¿Cómo podemos ayudarte?"
                   className="min-h-[120px]"
                   {...field}
                 />
@@ -103,7 +103,7 @@ export function ContactForm() {
           )}
         />
         <Button type="submit" className="w-full" disabled={loading}>
-          {loading ? "Sending..." : "Send Message"}
+          {loading ? "Enviando" : "Enviar Mensaje"}
         </Button>
       </form>
     </Form>

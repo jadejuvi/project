@@ -7,36 +7,38 @@ import { cn } from "@/lib/utils";
 
 const plans = [
   {
-    title: "Basic",
-    price: "99",
+    title: "Básico",
+    price: "99.000",
     features: [
-      "Up to 500 patients",
-      "Basic appointment scheduling",
-      "Patient records management",
-      "Email support",
+      "Hasta 50 pacientes",
+      "Programación básica de citas",
+      "Gestión de registros de pacientes",
+      "Soporte por correo electrónico",
     ],
   },
   {
-    title: "Professional",
-    price: "199",
+    title: "Profesional",
+    price: "199.000",
     popular: true,
     features: [
-      "Up to 2000 patients",
-      "Advanced scheduling",
-      "Treatment planning",
-      "Billing management",
-      "Priority support",
+      "Hasta 200 pacientes",
+      "Programación avanzada",
+      "Planificación de tratamientos",
+      "Gestión de facturación",
+      "Panel de administración + 3 profesionales",
+      "Soporte prioritario",
     ],
   },
   {
-    title: "Enterprise",
-    price: "299",
+    title: "Empresarial",
+    price: "799.000",
     features: [
-      "Unlimited patients",
-      "Custom features",
-      "Advanced analytics",
-      "Multi-location support",
-      "24/7 premium support",
+      "Pacientes ilimitados",
+      "Características personalizadas",
+      "Análisis avanzados",
+      "Panel de administración y profesionales",
+      "Soporte multiubicación",
+      "Soporte premium 24/7",
     ],
   },
 ];
@@ -45,7 +47,7 @@ export function Pricing() {
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">Pricing Plans</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">Planes de Precios</h2>
         <div className="grid md:grid-cols-3 gap-8">
           {plans.map((plan) => (
             <Card 
@@ -58,15 +60,15 @@ export function Pricing() {
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <span className="bg-primary text-primary-foreground text-sm font-medium px-3 py-1 rounded-full">
-                    Most Popular
+                    Más Popular
                   </span>
                 </div>
               )}
               <CardHeader className="text-center">
                 <CardTitle>{plan.title}</CardTitle>
                 <div className="mt-4">
-                  <span className="text-4xl font-bold">${plan.price}</span>
-                  <span className="text-muted-foreground">/month</span>
+                  <span className="text-4xl font-bold">{`Gs. ${plan.price}`}</span>
+                  <span className="text-muted-foreground">/mes</span>
                 </div>
               </CardHeader>
               <CardContent>
@@ -79,7 +81,7 @@ export function Pricing() {
                   ))}
                 </ul>
                 <Button className="w-full" variant={plan.popular ? "default" : "outline"}>
-                  Get Started
+                  Comenzar
                 </Button>
               </CardContent>
             </Card>

@@ -14,21 +14,21 @@ export default function PatientsPage() {
     <div className="container mx-auto p-6 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Patients</h1>
-          <p className="text-muted-foreground">Manage your patient records</p>
+          <h1 className="text-3xl font-bold tracking-tight">Pacientes</h1>
+          <p className="text-muted-foreground">Gestiona tus registros de pacientes</p>
         </div>
-        <Button onClick={() => setOpen(true)}>Add New Patient</Button>
+        <Button onClick={() => setOpen(true)}>Agregar Nuevo Paciente</Button>
       </div>
 
       <div className="flex items-center space-x-2">
         <div className="relative flex-1">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Search patients..."
+            placeholder="Buscar pacientes..."
             className="pl-8"
           />
         </div>
-        <Button variant="outline">Filter</Button>
+        <Button variant="outline">Filtrar</Button>
       </div>
 
       <PatientList />

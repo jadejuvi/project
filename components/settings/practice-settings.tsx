@@ -1,8 +1,8 @@
 "use client";
 
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import {
   Form,
   FormControl,
@@ -11,25 +11,25 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/components/ui/select';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+} from "@/components/ui/select";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const formSchema = z.object({
-  practiceName: z.string().min(2, 'Practice name is required'),
-  address: z.string().min(5, 'Address is required'),
-  phone: z.string().min(10, 'Phone number is required'),
-  email: z.string().email('Invalid email address'),
-  website: z.string().url().optional(),
+  practiceName: z.string().min(2, "Campo requerido"),
+  address: z.string().min(5, "Campo requerido"),
+  phone: z.string().min(10, "Campo requerido"),
+  email: z.string().email("Campo requerido"),
+  city: z.string().min(5, "Campo requerido"),
   timezone: z.string(),
   currency: z.string(),
   businessHours: z.object({
@@ -42,16 +42,15 @@ export function PracticeSettings() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      practiceName: 'DentFlow Clinic',
-      address: '123 Medical Center Dr',
-      phone: '+1 234-567-8900',
-      email: 'contact@dentflow.com',
-      website: 'https://dentflow.com',
-      timezone: 'America/New_York',
-      currency: 'USD',
+      practiceName: "Odonto Más",
+      address: "Pampa Grande & Fortin Casanillo",
+      phone: "+595985495392",
+      city: "Ciudad del Este",
+      email: "odontomas.cde@gmail.com",
+      currency: "PYG",
       businessHours: {
-        start: '09:00',
-        end: '17:00',
+        start: "09:00",
+        end: "18:00",
       },
     },
   });
@@ -63,7 +62,7 @@ export function PracticeSettings() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Practice Information</CardTitle>
+        <CardTitle>Información de la Clínica</CardTitle>
       </CardHeader>
       <CardContent>
         <Form {...form}>
@@ -73,7 +72,7 @@ export function PracticeSettings() {
               name="practiceName"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Practice Name</FormLabel>
+                  <FormLabel>Nombre de la clínica</FormLabel>
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
@@ -87,7 +86,7 @@ export function PracticeSettings() {
               name="address"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Address</FormLabel>
+                  <FormLabel>Dirección</FormLabel>
                   <FormControl>
                     <Textarea {...field} />
                   </FormControl>
@@ -99,10 +98,10 @@ export function PracticeSettings() {
             <div className="grid grid-cols-2 gap-4">
               <FormField
                 control={form.control}
-                name="phone"
+                name="city"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Phone</FormLabel>
+                    <FormLabel>Ciudad</FormLabel>
                     <FormControl>
                       <Input {...field} />
                     </FormControl>
@@ -110,7 +109,21 @@ export function PracticeSettings() {
                   </FormItem>
                 )}
               />
-
+              <FormField
+                control={form.control}
+                name="phone"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Teléfono</FormLabel>
+                    <FormControl>
+                      <Input {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4">
               <FormField
                 control={form.control}
                 name="email"
@@ -124,56 +137,12 @@ export function PracticeSettings() {
                   </FormItem>
                 )}
               />
-            </div>
-
-            <FormField
-              control={form.control}
-              name="website"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Website</FormLabel>
-                  <FormControl>
-                    <Input {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <div className="grid grid-cols-2 gap-4">
-              <FormField
-                control={form.control}
-                name="timezone"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Timezone</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger>
-                          <SelectValue placeholder="Select timezone" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        <SelectItem value="America/New_York">Eastern Time</SelectItem>
-                        <SelectItem value="America/Chicago">Central Time</SelectItem>
-                        <SelectItem value="America/Denver">Mountain Time</SelectItem>
-                        <SelectItem value="America/Los_Angeles">Pacific Time</SelectItem>
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
               <FormField
                 control={form.control}
                 name="currency"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Currency</FormLabel>
+                    <FormLabel>Moneda</FormLabel>
                     <Select
                       onValueChange={field.onChange}
                       defaultValue={field.value}
@@ -184,9 +153,12 @@ export function PracticeSettings() {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="USD">USD ($)</SelectItem>
-                        <SelectItem value="EUR">EUR (€)</SelectItem>
-                        <SelectItem value="GBP">GBP (£)</SelectItem>
+                        <SelectItem value="PYG">Guaraníes (PYG)</SelectItem>
+                        <SelectItem value="USD">Dólares (USD)</SelectItem>
+                        <SelectItem value="BRL">Reales (BRL)</SelectItem>
+                        <SelectItem value="ARS">
+                          Pesos Argentinos (ARS)
+                        </SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -201,9 +173,13 @@ export function PracticeSettings() {
                 name="businessHours.start"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Opening Time</FormLabel>
+                    <FormLabel>Horario de Apertura</FormLabel>
                     <FormControl>
-                      <Input type="time" {...field} />
+                      <Input
+                        type="time"
+                        {...field}
+                        value={field.value as string}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -215,9 +191,13 @@ export function PracticeSettings() {
                 name="businessHours.end"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Closing Time</FormLabel>
+                    <FormLabel>Horario de Cierre</FormLabel>
                     <FormControl>
-                      <Input type="time" {...field} />
+                      <Input
+                        type="time"
+                        {...field}
+                        value={field.value as string}
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -226,7 +206,7 @@ export function PracticeSettings() {
             </div>
 
             <div className="flex justify-end">
-              <Button type="submit">Save Changes</Button>
+              <Button type="submit">Guardar Cambios</Button>
             </div>
           </form>
         </Form>

@@ -12,28 +12,28 @@ import {
 
 const stats = [
   {
-    title: 'Total Appointments',
+    title: 'Total de Turnos',
     value: '182',
     change: '+12.3%',
     trend: 'up',
     icon: Calendar,
   },
   {
-    title: 'New Patients',
+    title: 'Nuevos Pacientes',
     value: '48',
     change: '+4.5%',
     trend: 'up',
     icon: Users,
   },
   {
-    title: 'Avg. Wait Time',
+    title: 'Tiempo Promedio de Espera',
     value: '14min',
     change: '-2.3%',
     trend: 'down',
     icon: Clock,
   },
   {
-    title: 'Completion Rate',
+    title: 'Tasa de Finalización',
     value: '94%',
     change: '+1.5%',
     trend: 'up',

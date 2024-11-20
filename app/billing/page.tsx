@@ -17,17 +17,17 @@ export default function BillingPage() {
     <div className="container mx-auto p-6 space-y-6">
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Billing</h1>
-          <p className="text-muted-foreground">Manage invoices and payments</p>
+          <h1 className="text-3xl font-bold tracking-tight">Facturación</h1>
+          <p className="text-muted-foreground">Gestionar facturas y pagos</p>
         </div>
-        <Button onClick={() => setOpen(true)}>Create Invoice</Button>
+        <Button onClick={() => setOpen(true)}>Crear Factura</Button>
       </div>
 
       <div className="flex items-center space-x-2">
         <div className="relative flex-1">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
-            placeholder="Search invoices..."
+            placeholder="Buscar facturas..."
             className="pl-8"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -35,14 +35,14 @@ export default function BillingPage() {
         </div>
         <Button variant="outline">
           <Filter className="mr-2 h-4 w-4" />
-          Filter
+          Filtrar
         </Button>
       </div>
 
       <Tabs defaultValue="invoices" className="space-y-4">
         <TabsList>
-          <TabsTrigger value="invoices">Invoices</TabsTrigger>
-          <TabsTrigger value="payments">Payment History</TabsTrigger>
+          <TabsTrigger value="invoices">Facturas</TabsTrigger>
+          <TabsTrigger value="payments">Historial de Pagos</TabsTrigger>
         </TabsList>
         <TabsContent value="invoices" className="space-y-4">
           <InvoiceList searchQuery={searchQuery} />

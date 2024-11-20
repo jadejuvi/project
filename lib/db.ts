@@ -23,8 +23,10 @@ export function execute(sql: string, params: any[] = []) {
   return stmt.run(params);
 }
 
-export default {
+const dbConfig = {
   query,
   queryOne,
   execute,
 };
+
+export default dbConfig;

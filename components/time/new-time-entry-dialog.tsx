@@ -62,7 +62,7 @@ export function NewTimeEntryDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Log Time Entry</DialogTitle>
+          <DialogTitle>Registrar Entrada de Tiempo</DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -71,14 +71,14 @@ export function NewTimeEntryDialog({
               name="staffId"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Staff Member</FormLabel>
+                  <FormLabel>Profesional</FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select staff member" />
+                        <SelectValue placeholder="Selecciona un profesional" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
@@ -95,7 +95,7 @@ export function NewTimeEntryDialog({
               name="date"
               render={({ field }) => (
                 <FormItem className="flex flex-col">
-                  <FormLabel>Date</FormLabel>
+                  <FormLabel>Fecha</FormLabel>
                   <Popover>
                     <PopoverTrigger asChild>
                       <FormControl>
@@ -109,7 +109,7 @@ export function NewTimeEntryDialog({
                           {field.value ? (
                             format(field.value, 'PPP')
                           ) : (
-                            <span>Pick a date</span>
+                            <span>Selecciona una fecha</span>
                           )}
                           <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                         </Button>
@@ -134,7 +134,7 @@ export function NewTimeEntryDialog({
                 name="startTime"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Start Time</FormLabel>
+                    <FormLabel>Hora de Inicio</FormLabel>
                     <FormControl>
                       <Input type="time" {...field} />
                     </FormControl>
@@ -147,7 +147,7 @@ export function NewTimeEntryDialog({
                 name="endTime"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>End Time</FormLabel>
+                    <FormLabel>Hora de Fin</FormLabel>
                     <FormControl>
                       <Input type="time" {...field} />
                     </FormControl>
@@ -158,9 +158,9 @@ export function NewTimeEntryDialog({
             </div>
             <div className="flex justify-end space-x-2">
               <Button variant="outline" onClick={() => onOpenChange(false)}>
-                Cancel
+                Cancelar
               </Button>
-              <Button type="submit">Save Entry</Button>
+              <Button type="submit">Guardar Entrada</Button>
             </div>
           </form>
         </Form>

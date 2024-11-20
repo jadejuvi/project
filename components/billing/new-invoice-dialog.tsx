@@ -67,7 +67,7 @@ export function NewInvoiceDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Create New Invoice</DialogTitle>
+          <DialogTitle>Crear Nueva Factura</DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -76,7 +76,7 @@ export function NewInvoiceDialog({
               name="patientId"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Patient</FormLabel>
+                  <FormLabel>Paciente</FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
@@ -100,20 +100,20 @@ export function NewInvoiceDialog({
               name="treatmentId"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Treatment</FormLabel>
+                  <FormLabel>Tratamiento</FormLabel>
                   <Select
                     onValueChange={field.onChange}
                     defaultValue={field.value}
                   >
                     <FormControl>
                       <SelectTrigger>
-                        <SelectValue placeholder="Select treatment" />
+                        <SelectValue placeholder="Tratamiento" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="1">Root Canal + Crown</SelectItem>
-                      <SelectItem value="2">Dental Implant</SelectItem>
-                      <SelectItem value="3">Teeth Cleaning</SelectItem>
+                      <SelectItem value="1">Limpieza + Blanqueamiento</SelectItem>
+                      <SelectItem value="2">Implante</SelectItem>
+                      <SelectItem value="3">Corona</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />
@@ -125,7 +125,7 @@ export function NewInvoiceDialog({
               name="amount"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Amount</FormLabel>
+                  <FormLabel>Cantidad</FormLabel>
                   <FormControl>
                     <Input
                       type="number"
@@ -142,7 +142,7 @@ export function NewInvoiceDialog({
               name="dueDate"
               render={({ field }) => (
                 <FormItem className="flex flex-col">
-                  <FormLabel>Due Date</FormLabel>
+                  <FormLabel>Fecha de Vencimiento</FormLabel>
                   <Popover>
                     <PopoverTrigger asChild>
                       <FormControl>
@@ -156,7 +156,7 @@ export function NewInvoiceDialog({
                           {field.value ? (
                             format(field.value, 'PPP')
                           ) : (
-                            <span>Pick a date</span>
+                            <span>Seleccionar una fecha</span>
                           )}
                           <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                         </Button>
@@ -183,7 +183,7 @@ export function NewInvoiceDialog({
               name="notes"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Notes</FormLabel>
+                  <FormLabel>Notas</FormLabel>
                   <FormControl>
                     <Textarea {...field} />
                   </FormControl>
@@ -193,9 +193,9 @@ export function NewInvoiceDialog({
             />
             <div className="flex justify-end space-x-2">
               <Button variant="outline" onClick={() => onOpenChange(false)}>
-                Cancel
+                Cancelar
               </Button>
-              <Button type="submit">Create Invoice</Button>
+              <Button type="submit">Crear Factura</Button>
             </div>
           </form>
         </Form>
