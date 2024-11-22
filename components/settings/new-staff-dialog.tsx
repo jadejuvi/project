@@ -56,7 +56,7 @@ export function NewStaffDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Add Staff Member</DialogTitle>
+          <DialogTitle>Agregar Profesional</DialogTitle>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -65,7 +65,7 @@ export function NewStaffDialog({
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Full Name</FormLabel>
+                  <FormLabel>Nombre Completo</FormLabel>
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
@@ -93,7 +93,7 @@ export function NewStaffDialog({
               name="role"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Role</FormLabel>
+                  <FormLabel>Rol</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
@@ -101,11 +101,11 @@ export function NewStaffDialog({
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="dentist">Dentist</SelectItem>
-                      <SelectItem value="orthodontist">Orthodontist</SelectItem>
-                      <SelectItem value="hygienist">Dental Hygienist</SelectItem>
-                      <SelectItem value="assistant">Dental Assistant</SelectItem>
-                      <SelectItem value="receptionist">Receptionist</SelectItem>
+                  
+                      <SelectItem value="orthodontist">Ortodoncista</SelectItem>
+                      <SelectItem value="hygienist">Odontólogo Cirujano</SelectItem>
+                      <SelectItem value="assistant">Asistente Dental</SelectItem>
+                      <SelectItem value="receptionist">Recepcionista</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />
@@ -118,7 +118,7 @@ export function NewStaffDialog({
               name="permissions"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Permissions</FormLabel>
+                  <FormLabel>Permisos</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
@@ -126,9 +126,9 @@ export function NewStaffDialog({
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="all">Full Access</SelectItem>
-                      <SelectItem value="limited">Limited Access</SelectItem>
-                      <SelectItem value="readonly">Read Only</SelectItem>
+                      <SelectItem value="all">Acceso Completo</SelectItem>
+                      <SelectItem value="limited">Acceso Limitado</SelectItem>
+                      <SelectItem value="readonly">Solo Lectura</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />
@@ -140,7 +140,7 @@ export function NewStaffDialog({
               <Button variant="outline" onClick={() => onOpenChange(false)}>
                 Cancel
               </Button>
-              <Button type="submit">Add Staff Member</Button>
+              <Button type="submit">Agregar Profesional</Button>
             </div>
           </form>
         </Form>

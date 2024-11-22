@@ -14,7 +14,7 @@ export default function SettingsPage() {
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Configuración</h1>
         <p className="text-muted-foreground">
-          Administra tus preferencias y las configuraciones de tu clínica
+          Administra tus preferencias y las configuraciones de tu cuenta
         </p>
       </div>
 
@@ -24,7 +24,7 @@ export default function SettingsPage() {
           <TabsTrigger value="staff">Profesional</TabsTrigger>
           <TabsTrigger value="notifications">Notificaciones</TabsTrigger>
           <TabsTrigger value="integrations">Integraciones</TabsTrigger>
-          <TabsTrigger value="billing">Facturación</TabsTrigger>
+          <TabsTrigger value="billing">Suscripción</TabsTrigger>
         </TabsList>
 
         <TabsContent value="practice" className="space-y-6">

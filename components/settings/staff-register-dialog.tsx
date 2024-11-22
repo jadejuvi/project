@@ -82,7 +82,7 @@ export function StaffRegisterDialog({
           <Alert className="bg-green-50 border-green-200">
             <CheckCircle2 className="h-4 w-4 text-green-600" />
             <AlertDescription className="text-green-700">
-              Staff member registered successfully. Login credentials have been sent to their email.
+              Profesional agregado al equipo. Las credenciales de accesos serán enviadar por email.
             </AlertDescription>
           </Alert>
         </div>
@@ -91,7 +91,7 @@ export function StaffRegisterDialog({
       <Dialog open={open} onOpenChange={onOpenChange}>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Register Staff Member</DialogTitle>
+            <DialogTitle>Agregar Profesional</DialogTitle>
           </DialogHeader>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -100,7 +100,7 @@ export function StaffRegisterDialog({
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Full Name</FormLabel>
+                    <FormLabel>Nombre Completo</FormLabel>
                     <FormControl>
                       <Input {...field} />
                     </FormControl>
@@ -128,7 +128,7 @@ export function StaffRegisterDialog({
                 name="password"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Password</FormLabel>
+                    <FormLabel>Contraseña</FormLabel>
                     <FormControl>
                       <Input type="password" {...field} />
                     </FormControl>
@@ -142,7 +142,7 @@ export function StaffRegisterDialog({
                 name="confirmPassword"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Confirm Password</FormLabel>
+                    <FormLabel>Confirmar Contraseña</FormLabel>
                     <FormControl>
                       <Input type="password" {...field} />
                     </FormControl>
@@ -156,19 +156,19 @@ export function StaffRegisterDialog({
                 name="role"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Role</FormLabel>
+                    <FormLabel>Rol</FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select role" />
+                          <SelectValue placeholder="Seleccionar Rol" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="dentist">Dentist</SelectItem>
-                        <SelectItem value="orthodontist">Orthodontist</SelectItem>
-                        <SelectItem value="hygienist">Dental Hygienist</SelectItem>
-                        <SelectItem value="assistant">Dental Assistant</SelectItem>
-                        <SelectItem value="receptionist">Receptionist</SelectItem>
+               
+                        <SelectItem value="orthodontist">Ortodoncista</SelectItem>
+                        <SelectItem value="hygienist">Odontólogo Cirujano</SelectItem>
+                        <SelectItem value="assistant">Asistente Dental</SelectItem>
+                        <SelectItem value="receptionist">Recepcionista</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -181,17 +181,17 @@ export function StaffRegisterDialog({
                 name="permissions"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Permissions</FormLabel>
+                    <FormLabel>Permisos</FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger>
-                          <SelectValue placeholder="Select permissions" />
+                          <SelectValue placeholder="Seleccionar Permiso" />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
-                        <SelectItem value="admin">Administrator</SelectItem>
-                        <SelectItem value="staff">Staff Member</SelectItem>
-                        <SelectItem value="limited">Limited Access</SelectItem>
+                        <SelectItem value="admin">Administrador</SelectItem>
+                        <SelectItem value="staff">Profesional</SelectItem>
+                        <SelectItem value="limited">Acceso Limitado</SelectItem>
                       </SelectContent>
                     </Select>
                     <FormMessage />
@@ -201,9 +201,9 @@ export function StaffRegisterDialog({
 
               <div className="flex justify-end space-x-2">
                 <Button variant="outline" onClick={() => onOpenChange(false)}>
-                  Cancel
+                  Cancelar
                 </Button>
-                <Button type="submit">Register Staff Member</Button>
+                <Button type="submit">Agregar Profesional</Button>
               </div>
             </form>
           </Form>

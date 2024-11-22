@@ -77,7 +77,7 @@ export function StaffSettings() {
         <div className="flex space-x-2">
           <Button onClick={() => setOpenRegister(true)} variant="default">
             <UserPlus className="mr-2 h-4 w-4" />
-            Registrar Profesional
+            Agregar Profesional
           </Button>
         </div>
       </div>
